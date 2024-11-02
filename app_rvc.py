@@ -1,6 +1,10 @@
+%%writefile /content/SoniTranslate/app_rvc.py
+import gradio as gr
+# سایر imports
+
 def create_ui():
     with gr.Blocks(theme=theme) as app:
-        # اضافه کردن لوگو و لینک یوتیوب در بالای صفحه
+        # اضافه کردن لوگوی یوتیوب در بالای صفحه
         gr.HTML(
             """
             <div style="text-align: center; margin-bottom: 1rem">
@@ -12,7 +16,8 @@ def create_ui():
             </div>
             """
         )
-        # ادامه کد قبلی...
+        # ادامه کد قبلی
+
 
 import gradio as gr
 from soni_translate.logging_setup import (
