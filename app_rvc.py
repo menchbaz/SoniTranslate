@@ -1,22 +1,12 @@
+
 %%writefile /content/SoniTranslate/app_rvc.py
 import gradio as gr
-# سایر imports
+from soni_translate.templates import YOUTUBE_BUTTON
 
 def create_ui():
     with gr.Blocks(theme=theme) as app:
-        # اضافه کردن لوگوی یوتیوب در بالای صفحه
-        gr.HTML(
-            """
-            <div style="text-align: center; margin-bottom: 1rem">
-                <a href="https://www.youtube.com/@aigolden" target="_blank">
-                    <img src="https://raw.githubusercontent.com/paulrobertlloyd/socialmediaicons/main/youtube-48x48.png" 
-                         style="height: 48px; cursor: pointer;" 
-                         alt="YouTube Channel">
-                </a>
-            </div>
-            """
-        )
-        # ادامه کد قبلی
+        gr.HTML(YOUTUBE_BUTTON)
+        # بقیه کد
 
 
 import gradio as gr
