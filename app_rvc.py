@@ -1,3 +1,19 @@
+def create_ui():
+    with gr.Blocks(theme=theme) as app:
+        # اضافه کردن لوگو و لینک یوتیوب در بالای صفحه
+        gr.HTML(
+            """
+            <div style="text-align: center; margin-bottom: 1rem">
+                <a href="https://www.youtube.com/@aigolden" target="_blank">
+                    <img src="https://raw.githubusercontent.com/paulrobertlloyd/socialmediaicons/main/youtube-48x48.png" 
+                         style="height: 48px; cursor: pointer;" 
+                         alt="YouTube Channel">
+                </a>
+            </div>
+            """
+        )
+        # ادامه کد قبلی...
+
 import gradio as gr
 from soni_translate.logging_setup import (
     logger,
@@ -7,6 +23,13 @@ from soni_translate.logging_setup import (
 import whisperx
 import torch
 import os
+from soni_translate.language_configuration_fa import PERSIAN_CONFIG
+
+def create_ui():
+    with gr.Blocks(theme=theme) as app:
+        gr.Markdown(PERSIAN_CONFIG["title"])
+        # استفاده از برچسب‌های فارسی در تمام المان‌های رابط کاربری
+
 from soni_translate.audio_segments import create_translated_audio
 from soni_translate.text_to_speech import (
     audio_segmentation_to_voice,
