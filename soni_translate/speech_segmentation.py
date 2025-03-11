@@ -23,6 +23,7 @@ ASR_MODEL_OPTIONS = [
     "large-v1",
     "large-v2",
     "large-v3",
+    "large-v3-turbo",  # <-- NEW MODEL ADDED
     "distil-large-v2",
     "Systran/faster-distil-whisper-large-v3",
     "tiny.en",
@@ -402,19 +403,19 @@ def diarize_speech(
             if "'NoneType' object has no attribute 'to'" in error_str:
                 if model_name == diarization_models["pyannote_2.1"]:
                     raise ValueError(
-                        "Accept the license agreement for using Pyannote 2.1."
-                        " You need to have an account on Hugging Face and "
-                        "accept the license to use the models: "
-                        "https://huggingface.co/pyannote/speaker-diarization "
-                        "and https://huggingface.co/pyannote/segmentation "
-                        "Get your KEY TOKEN here: "
+                        "Accept the license agreement for using Pyannote 2.1."\
+                        " You need to have an account on Hugging Face and "\
+                        "accept the license to use the models: "\
+                        "https://huggingface.co/pyannote/speaker-diarization "\
+                        "and https://huggingface.co/pyannote/segmentation "\
+                        "Get your KEY TOKEN here: "\
                         "https://hf.co/settings/tokens "
                     )
                 elif model_name == diarization_models["pyannote_3.1"]:
                     raise ValueError(
-                        "New Licence Pyannote 3.1: You need to have an account"
-                        " on Hugging Face and accept the license to use the "
-                        "models: https://huggingface.co/pyannote/speaker-diarization-3.1 " # noqa
+                        "New Licence Pyannote 3.1: You need to have an account"\
+                        " on Hugging Face and accept the license to use the "\
+                        "models: https://huggingface.co/pyannote/speaker-diarization-3.1 "\
                         "and https://huggingface.co/pyannote/segmentation-3.0 "
                     )
             else:
